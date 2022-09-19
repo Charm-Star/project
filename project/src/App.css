@@ -14,3 +14,15 @@
     font-family: 'Pacifico', cursive;
     color: #D4D925
 }
+
+.loginBox {
+    text-align: center;
+    width: 500px;
+    margin: 0 auto;
+    margin-top: 15%;
+    background-color: rgb(202, 199, 199);
+    padding: 15px;
+    border-radius: 10px;
+    height: 300px;
+
+}
