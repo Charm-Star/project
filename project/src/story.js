@@ -1,15 +1,24 @@
-import Container from "react-bootstrap/Container";
-import Navbar from "react-bootstrap/Navbar";
-import Nav from "react-bootstrap/Nav";
-import Ratio from "react-bootstrap/Ratio";
 import Daily from "./Daily";
 import "./App.css";
+import {useState} from "react";
 function Story() {
+  let [featherCnt, setFeatherCnt] = useState(0);
   return (
     <div className="container">
       <div className="c1image">
-        <img className="phoneImage" alt="iPhone_01" src="img/banner.jpg" />
+        <img className="banner" alt="banner" src="img/banner.jpg" />
         <Daily></Daily>
+      </div>
+      <div className="featherBox">
+        <img
+          className="feather"
+          alt="banner"
+          src="img/feather.png"
+          onClick={() => {
+            setFeatherCnt(featherCnt + 1);
+          }}
+        />
+        {featherCnt}
       </div>
     </div>
   );

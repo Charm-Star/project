@@ -4,36 +4,61 @@ function Daily() {
   return (
     <div style={{width: "100%", height: "100%", backgroundColor: "lightgrey"}}>
       <div style={{padding: "30px", margin: "0 auto"}}>
-        <Card style={{width: "100%", height: "100vh"}}>
-          <Card.Body style={{width: "100%", height: "100vh"}}>
-            <Card.Title>오늘의 느낌</Card.Title>
+        <Card style={{width: "100%", height: "100%"}}>
+          <Card.Body style={{width: "100%", height: "100%"}}>
+            <Card.Title
+              style={{fontFamily: "'Jua', sans-serif", fontSize: "35px"}}>
+              오늘의 일기
+            </Card.Title>
             <Card.Subtitle
-              style={{marginTop: "50px"}}
+              style={{marginTop: "50px", marginLeft: "40px"}}
               className="mb-2 text-muted">
               작성일 2022.09.20
             </Card.Subtitle>
-            <Card.Text style={{margin: "50px"}}>
-              Lorem ipsum dolor sit amet consectetur adipisicing e이것은 ㅇ스터
-              에그 입니다 Consectetur dolorem ratione, rerum error soluta
-              provident possimus quisquam corrupti, molestiae veritatis repellat
-              architecto repellendus! Neque, unde eos officiis voluptatibus
-              earum nemo. Lorem ipsum dolor sit amet consectetur adipisicing
-              elit. Consectetur dolorem ratione, rerum error soluta provident
-              possimus quisquam corrupti, molestiae veritatis repellat
-              architecto repellendus! Neque, unde eos officiis voluptatibus
-              earum nemo. Lorem ipsum dolor sit amet consectetur adipisicing
-              elit. Consectetur dolorem ratione, rerum error soluta provident
-              possimus quisquam corrupti, molestiae veritatis repellat
-              architecto repellendus! Neque, unde eos officiis voluptatibus
-              earum nemo. Lorem ipsum dolor sit amet consectetur adipisicing
-              elit. Consectetur dolorem ratione, rerum error soluta provident
-              possimus quisquam corrupti, molestiae veritatis repellat
-              architecto repellendus! Neque, unde eos officiis voluptatibus
-              earum nemo. Lorem ipsum dolor sit amet consectetur adipisicing
-              elit. Consectetur dolorem ratione, rerum error soluta provident
-              possimus quisquam corrupti, molestiae veritatis repellat
-              architecto repellendus! Neque, unde eos officiis voluptatibus
-              earum nemo.
+            <Card.Text
+              style={{
+                margin: "0 auto",
+                width: "60%",
+                marginTop: "100px",
+                fontSize: "20px",
+                fontFamily: "'Jua', sans-serif",
+              }}>
+              안녕하세요 첫번째 프로젝트를 만드는 중입니다 임시 글 입니다.
+              안녕하세요 첫번째 프로젝트를 만드는 중입니다 임시 글 입니다.
+              안녕하세요 첫번째 프로젝트를 만드는 중입니다 임시 글 입니다.
+              안녕하세요 첫번째 프로젝트를 만드는 중입니다 임시 글 입니다.
+              안녕하세요 첫번째 프로젝트를 만드는 중입니다 임시 글 입니다.
+              안녕하세요 첫번째 프로젝트를 만드는 중입니다 임시 글 입니다.
+              안녕하세요 첫번째 프로젝트를 만드는 중입니다 임시 글 입니다.
+              안녕하세요 첫번째 프로젝트를 만드는 중입니다 임시 글 입니다.
+              안녕하세요 첫번째 프로젝트를 만드는 중입니다 임시 글 입니다.
+              안녕하세요 첫번째 프로젝트를 만드는 중입니다 임시 글 입니다.
+              안녕하세요 첫번째 프로젝트를 만드는 중입니다 임시 글 입니다.
+              안녕하세요 첫번째 프로젝트를 만드는 중입니다 임시 글 입니다.
+              안녕하세요 첫번째 프로젝트를 만드는 중입니다 임시 글 입니다.
+              안녕하세요 첫번째 프로젝트를 만드는 중입니다 임시 글 입니다.
+              안녕하세요 첫번째 프로젝트를 만드는 중입니다 임시 글 입니다.
+              안녕하세요 첫번째 프로젝트를 만드는 중입니다 임시 글 입니다.
+              안녕하세요 첫번째 프로젝트를 만드는 중입니다 임시 글 입니다.
+              안녕하세요 첫번째 프로젝트를 만드는 중입니다 임시 글 입니다.
+              안녕하세요 첫번째 프로젝트를 만드는 중입니다 임시 글 입니다.
+              안녕하세요 첫번째 프로젝트를 만드는 중입니다 임시 글 입니다.
+              안녕하세요 첫번째 프로젝트를 만드는 중입니다 임시 글 입니다.
+              안녕하세요 첫번째 프로젝트를 만드는 중입니다 임시 글 입니다.
+              안녕하세요 첫번째 프로젝트를 만드는 중입니다 임시 글 입니다.
+              안녕하세요 첫번째 프로젝트를 만드는 중입니다 임시 글 입니다.
+              안녕하세요 첫번째 프로젝트를 만드는 중입니다 임시 글 입니다.
+              안녕하세요 첫번째 프로젝트를 만드는 중입니다 임시 글 입니다.
+              안녕하세요 첫번째 프로젝트를 만드는 중입니다 임시 글 입니다.
+              안녕하세요 첫번째 프로젝트를 만드는 중입니다 임시 글 입니다.
+              안녕하세요 첫번째 프로젝트를 만드는 중입니다 임시 글 입니다.
+              안녕하세요 첫번째 프로젝트를 만드는 중입니다 임시 글 입니다.
+              안녕하세요 첫번째 프로젝트를 만드는 중입니다 임시 글 입니다.
+              안녕하세요 첫번째 프로젝트를 만드는 중입니다 임시 글 입니다.
+              안녕하세요 첫번째 프로젝트를 만드는 중입니다 임시 글 입니다.
+              안녕하세요 첫번째 프로젝트를 만드는 중입니다 임시 글 입니다.
+              안녕하세요 첫번째 프로젝트를 만드는 중입니다 임시 글 입니다.
+              안녕하세요 첫번째 프로젝트를 만드는 중입니다 임시 글 입니다.
             </Card.Text>
           </Card.Body>
         </Card>

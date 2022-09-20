@@ -9,6 +9,7 @@ import Button from "react-bootstrap/Button";
 import Login from "./Login";
 import Story from "./story";
 import BackMovie from "./backMovie";
+import Write from "./Write";
 
 function App() {
   let [showLog, setShowLog] = useState(false);
@@ -26,11 +27,35 @@ function App() {
   }, []);
   return (
     <div>
-      <Navbar bg="light" variant="light" style={{height: "70px"}}>
-        <Container>
+      <Navbar
+        bg="light"
+        variant="light"
+        style={{
+          height: "70px",
+          borderBottom: "1px solid rgb(210, 210, 210)",
+        }}>
+        <Container style={{fontFamily: "'Lobster', cursive"}}>
           <Navbar.Brand href="/">Daily Feeling</Navbar.Brand>
           <Nav className="me-auto"></Nav>
+          <div
+            className="navBox"
+            style={{color: "black", margin: "10px", fontWeight: "550"}}
+            onClick={() => {
+              navigate("write");
+            }}>
+            {" "}
+            Write{" "}
+          </div>
           <div style={{color: "black", margin: "10px", fontWeight: "550"}}>
+            {" "}
+            Setting{" "}
+          </div>
+          <div
+            style={{color: "black", margin: "10px", fontWeight: "550"}}
+            onClick={() => {
+              setShowLog(true);
+              navigate("/");
+            }}>
             {" "}
             Login{" "}
           </div>
@@ -47,22 +72,29 @@ function App() {
               ) : (
                 <div>
                   <div className={"DF " + opaclass}>
-                    Daily<br></br>Feeling
+                    <p className="DFhover">
+                      Daily<br></br>Feeling
+                    </p>
                   </div>
                   <Button
                     variant="warning"
                     size="lg"
-                    style={{marginLeft: "45%"}}
+                    style={{
+                      marginLeft: "45%",
+                      fontFamily: " 'Caveat Brush', cursive",
+                      fontFamily: "  'Lobster', cursive",
+                    }}
                     onClick={() => {
                       setShowLog(true);
                     }}>
-                    START WRITTING
+                    START
                   </Button>
                 </div>
               )}
             </div>
           }></Route>
         <Route path="story" element={<Story></Story>}></Route>
+        <Route path="write" element={<Write></Write>}></Route>
       </Routes>
     </div>
   );
