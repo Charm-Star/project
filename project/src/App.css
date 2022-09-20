@@ -7,12 +7,13 @@
 
 
 .DF {
+    opacity: 0.2;
     margin: 0;
     text-align: center;
     width: 100%;
     font-size: 200px;
     font-family: 'Pacifico', cursive;
-    color: #D4D925
+    color: #f9e725
 }
 
 .loginBox {
@@ -25,4 +26,16 @@
     border-radius: 10px;
     height: 300px;
 
+}
+
+.aniTo {
+    opacity: 1;
+    transition-duration: 1s;
+    transition-property: opacity;
+}
+
+img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
 }

@@ -2,16 +2,28 @@ import "./App.css";
 import Container from "react-bootstrap/Container";
 import Navbar from "react-bootstrap/Navbar";
 import Nav from "react-bootstrap/Nav";
-import bgVideo from "./media/back.mp4";
-import Button from "react-bootstrap/Button";
-import {Route, useNavigate, Routes} from "react-router-dom";
-import {useState} from "react";
 
+import {Route, useNavigate, Routes} from "react-router-dom";
+import {useEffect, useState} from "react";
+import Button from "react-bootstrap/Button";
 import Login from "./Login";
+import Story from "./story";
+import BackMovie from "./backMovie";
 
 function App() {
   let [showLog, setShowLog] = useState(false);
   const navigate = useNavigate();
+  let [opaclass, setOpaclass] = useState("");
+  const time = useEffect(() => {
+    setTimeout(() => {
+      setOpaclass("aniTo");
+    }, 500);
+
+    return () => {
+      clearTimeout(time);
+      setOpaclass("");
+    };
+  }, []);
   return (
     <div>
       <Navbar bg="light" variant="light" style={{height: "70px"}}>
@@ -24,45 +36,34 @@ function App() {
           </div>
         </Container>
       </Navbar>
-
-      {
-        <div>
-          <video
-            muted
-            autoPlay
-            loop
-            style={{
-              position: "absolute",
-              width: "100%",
-              left: "50%",
-              top: "50%",
-              height: "100%",
-              objectFit: "cover",
-              transform: "translate(-50%,-50%)",
-              zIndex: "-1",
-            }}>
-            <source src={bgVideo} type="video/mp4" />
-          </video>
-          {showLog === true ? (
-            <Login></Login>
-          ) : (
+      <Routes>
+        <Route
+          path="/"
+          element={
             <div>
-              <div className="DF">
-                Daily<br></br>Feeling
-              </div>
-              <Button
-                variant="warning"
-                size="lg"
-                style={{marginLeft: "45%"}}
-                onClick={() => {
-                  setShowLog(true);
-                }}>
-                START WRITTING
-              </Button>
+              <BackMovie></BackMovie>
+              {showLog === true ? (
+                <Login></Login>
+              ) : (
+                <div>
+                  <div className={"DF " + opaclass}>
+                    Daily<br></br>Feeling
+                  </div>
+                  <Button
+                    variant="warning"
+                    size="lg"
+                    style={{marginLeft: "45%"}}
+                    onClick={() => {
+                      setShowLog(true);
+                    }}>
+                    START WRITTING
+                  </Button>
+                </div>
+              )}
             </div>
-          )}
-        </div>
-      }
+          }></Route>
+        <Route path="story" element={<Story></Story>}></Route>
+      </Routes>
     </div>
   );
 }
