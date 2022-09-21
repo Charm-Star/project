@@ -1,6 +1,13 @@
 import Card from "react-bootstrap/Card";
+import {useState} from "react";
+// function Daily({inputTitle, inputContent}) {
+function Daily({inputTitle, inputContent}) {
+  let now = new Date();
+  let [featherCnt, setFeatherCnt] = useState(0);
+  let year = now.getFullYear();
+  let month = now.getMonth();
+  let date = now.getDate();
 
-function Daily() {
   return (
     <div style={{width: "100%", height: "100%", backgroundColor: "lightgrey"}}>
       <div style={{padding: "30px", margin: "0 auto"}}>
@@ -8,12 +15,12 @@ function Daily() {
           <Card.Body style={{width: "100%", height: "100%"}}>
             <Card.Title
               style={{fontFamily: "'Jua', sans-serif", fontSize: "35px"}}>
-              오늘의 일기
+              {inputTitle}
             </Card.Title>
             <Card.Subtitle
               style={{marginTop: "50px", marginLeft: "40px"}}
               className="mb-2 text-muted">
-              작성일 2022.09.20
+              {`작성일 ${year}.${month + 1}.${date}`}
             </Card.Subtitle>
             <Card.Text
               style={{
@@ -23,45 +30,21 @@ function Daily() {
                 fontSize: "20px",
                 fontFamily: "'Jua', sans-serif",
               }}>
-              안녕하세요 첫번째 프로젝트를 만드는 중입니다 임시 글 입니다.
-              안녕하세요 첫번째 프로젝트를 만드는 중입니다 임시 글 입니다.
-              안녕하세요 첫번째 프로젝트를 만드는 중입니다 임시 글 입니다.
-              안녕하세요 첫번째 프로젝트를 만드는 중입니다 임시 글 입니다.
-              안녕하세요 첫번째 프로젝트를 만드는 중입니다 임시 글 입니다.
-              안녕하세요 첫번째 프로젝트를 만드는 중입니다 임시 글 입니다.
-              안녕하세요 첫번째 프로젝트를 만드는 중입니다 임시 글 입니다.
-              안녕하세요 첫번째 프로젝트를 만드는 중입니다 임시 글 입니다.
-              안녕하세요 첫번째 프로젝트를 만드는 중입니다 임시 글 입니다.
-              안녕하세요 첫번째 프로젝트를 만드는 중입니다 임시 글 입니다.
-              안녕하세요 첫번째 프로젝트를 만드는 중입니다 임시 글 입니다.
-              안녕하세요 첫번째 프로젝트를 만드는 중입니다 임시 글 입니다.
-              안녕하세요 첫번째 프로젝트를 만드는 중입니다 임시 글 입니다.
-              안녕하세요 첫번째 프로젝트를 만드는 중입니다 임시 글 입니다.
-              안녕하세요 첫번째 프로젝트를 만드는 중입니다 임시 글 입니다.
-              안녕하세요 첫번째 프로젝트를 만드는 중입니다 임시 글 입니다.
-              안녕하세요 첫번째 프로젝트를 만드는 중입니다 임시 글 입니다.
-              안녕하세요 첫번째 프로젝트를 만드는 중입니다 임시 글 입니다.
-              안녕하세요 첫번째 프로젝트를 만드는 중입니다 임시 글 입니다.
-              안녕하세요 첫번째 프로젝트를 만드는 중입니다 임시 글 입니다.
-              안녕하세요 첫번째 프로젝트를 만드는 중입니다 임시 글 입니다.
-              안녕하세요 첫번째 프로젝트를 만드는 중입니다 임시 글 입니다.
-              안녕하세요 첫번째 프로젝트를 만드는 중입니다 임시 글 입니다.
-              안녕하세요 첫번째 프로젝트를 만드는 중입니다 임시 글 입니다.
-              안녕하세요 첫번째 프로젝트를 만드는 중입니다 임시 글 입니다.
-              안녕하세요 첫번째 프로젝트를 만드는 중입니다 임시 글 입니다.
-              안녕하세요 첫번째 프로젝트를 만드는 중입니다 임시 글 입니다.
-              안녕하세요 첫번째 프로젝트를 만드는 중입니다 임시 글 입니다.
-              안녕하세요 첫번째 프로젝트를 만드는 중입니다 임시 글 입니다.
-              안녕하세요 첫번째 프로젝트를 만드는 중입니다 임시 글 입니다.
-              안녕하세요 첫번째 프로젝트를 만드는 중입니다 임시 글 입니다.
-              안녕하세요 첫번째 프로젝트를 만드는 중입니다 임시 글 입니다.
-              안녕하세요 첫번째 프로젝트를 만드는 중입니다 임시 글 입니다.
-              안녕하세요 첫번째 프로젝트를 만드는 중입니다 임시 글 입니다.
-              안녕하세요 첫번째 프로젝트를 만드는 중입니다 임시 글 입니다.
-              안녕하세요 첫번째 프로젝트를 만드는 중입니다 임시 글 입니다.
+              {inputContent}
             </Card.Text>
           </Card.Body>
         </Card>
+        <div className="featherBox">
+          <img
+            className="feather"
+            alt="banner"
+            src="img/feather.png"
+            onClick={() => {
+              setFeatherCnt(featherCnt + 1);
+            }}
+          />
+          {featherCnt}
+        </div>
       </div>
     </div>
   );

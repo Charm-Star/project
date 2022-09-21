@@ -1,8 +1,13 @@
-import FloatingLabel from "react-bootstrap/FloatingLabel";
 import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
+import "./App.css";
+import {useNavigate} from "react-router-dom";
 
-function Write() {
+const title = "dfdf";
+
+function Write({setInputContent, setInputTitle}) {
+  const navigate = useNavigate();
+
   return (
     <div className="container">
       <div className="c1image">
@@ -18,8 +23,27 @@ function Write() {
           fontFamily: "'Jua', sans-serif",
         }}>
         <p>Author:</p>
-        <input type="text" placeholder="제목"></input>
-
+        <input
+          onChange={(e) => {
+            setInputTitle(e.target.value);
+          }}
+          className="diaryTitle"
+          style={{
+            width: "100%",
+            height: "50px",
+            fontSize: "25px",
+            borderRadius: "5px",
+          }}
+          type="text"
+          placeholder="제목"></input>
+        <p>내용</p>
+        <div style={{height: "500px", fontSize: "25px"}}>
+          <textarea
+            className="textArea"
+            onChange={(e) => {
+              setInputContent(e.target.value);
+            }}></textarea>
+        </div>
         {["radio"].map((type) => (
           <div key={`default-${type}`} className="mb-3">
             <Form.Check
@@ -41,6 +65,9 @@ function Write() {
           size="lg"
           style={{
             marginLeft: "45%",
+          }}
+          onClick={() => {
+            navigate("/story");
           }}>
           글쓰기
         </Button>
@@ -49,4 +76,5 @@ function Write() {
   );
 }
 
-export default Write;
+// export default Write;
+export {Write as default, title};

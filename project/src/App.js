@@ -12,6 +12,8 @@ import BackMovie from "./backMovie";
 import Write from "./Write";
 
 function App() {
+  let [inputTitle, setInputTitle] = useState();
+  let [inputContent, setInputContent] = useState();
   let [showLog, setShowLog] = useState(false);
   const navigate = useNavigate();
   let [opaclass, setOpaclass] = useState("");
@@ -81,7 +83,6 @@ function App() {
                     size="lg"
                     style={{
                       marginLeft: "45%",
-                      fontFamily: " 'Caveat Brush', cursive",
                       fontFamily: "  'Lobster', cursive",
                     }}
                     onClick={() => {
@@ -93,8 +94,18 @@ function App() {
               )}
             </div>
           }></Route>
-        <Route path="story" element={<Story></Story>}></Route>
-        <Route path="write" element={<Write></Write>}></Route>
+        <Route
+          path="story"
+          element={
+            <Story inputTitle={inputTitle} inputContent={inputContent}></Story>
+          }></Route>
+        <Route
+          path="write"
+          element={
+            <Write
+              setInputContent={setInputContent}
+              setInputTitle={setInputTitle}></Write>
+          }></Route>
       </Routes>
     </div>
   );

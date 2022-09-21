@@ -23,13 +23,13 @@
 
 .loginBox {
     text-align: center;
-    width: 500px;
+    width: 300px;
     margin: 0 auto;
     margin-top: 15%;
     background-color: rgb(202, 199, 199);
     padding: 15px;
     border-radius: 10px;
-    height: 300px;
+    height: auto;
 
 }
 
@@ -89,4 +89,13 @@
 .loginBtn {
     background-color: rgba(0, 0, 0, 0.4),
 
+}
+
+textarea {
+    width: 100%;
+    height: 100%;
+    resize: none;
+    border-radius: 15px;
+    border: 1px solid black;
+    font-size: 15px;
 }
