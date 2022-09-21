@@ -3,15 +3,13 @@ import Button from "react-bootstrap/Button";
 import "./App.css";
 import {useNavigate} from "react-router-dom";
 
-const title = "dfdf";
-
-function Write({setInputContent, setInputTitle}) {
+function Write({setInputContent, setInputTitle, inputTitle, inputContent}) {
   const navigate = useNavigate();
 
   return (
     <div className="container">
       <div className="c1image">
-        <img className="banner" alt="banner" src="img/banner.jpg" />
+        <img className="banner" alt="banner" src="img/sunset.jpg" />
       </div>
       <div
         className="writeBox"
@@ -24,9 +22,6 @@ function Write({setInputContent, setInputTitle}) {
         }}>
         <p>Author:</p>
         <input
-          onChange={(e) => {
-            setInputTitle(e.target.value);
-          }}
           className="diaryTitle"
           style={{
             width: "100%",
@@ -38,11 +33,7 @@ function Write({setInputContent, setInputTitle}) {
           placeholder="제목"></input>
         <p>내용</p>
         <div style={{height: "500px", fontSize: "25px"}}>
-          <textarea
-            className="textArea"
-            onChange={(e) => {
-              setInputContent(e.target.value);
-            }}></textarea>
+          <textarea className="textArea"></textarea>
         </div>
         {["radio"].map((type) => (
           <div key={`default-${type}`} className="mb-3">
@@ -67,6 +58,17 @@ function Write({setInputContent, setInputTitle}) {
             marginLeft: "45%",
           }}
           onClick={() => {
+            let copy = [...inputTitle];
+            let tititle = document.getElementsByClassName("diaryTitle");
+            copy.push(tititle[0].value);
+            console.log(copy);
+            setInputTitle(copy);
+            let cocopy = [...inputContent];
+            let cocotent = document.getElementsByClassName("textArea");
+            console.log(cocotent[0].value);
+            console.log(cocotent[0].value);
+            cocopy.push(cocotent[0].value);
+            setInputContent(cocopy);
             navigate("/story");
           }}>
           글쓰기
@@ -76,5 +78,4 @@ function Write({setInputContent, setInputTitle}) {
   );
 }
 
-// export default Write;
-export {Write as default, title};
+export default Write;

@@ -4,8 +4,17 @@ function Story({inputTitle, inputContent}) {
   return (
     <div className="container">
       <div className="c1image">
-        <img className="banner" alt="banner" src="img/banner.jpg" />
-        <Daily inputTitle={inputTitle} inputContent={inputContent}></Daily>
+        <img className="banner" alt="banner" src="img/sunset.jpg" />
+
+        {/* {inputTitle.map((data, i) => {
+          return (
+            <Daily
+              key={`${i}`}
+              inputTitle={data}
+              titleIndex={i}
+              inputContent={inputContent}></Daily>
+          );
+        })} */}
       </div>
     </div>
   );

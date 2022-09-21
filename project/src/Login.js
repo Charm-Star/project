@@ -2,7 +2,7 @@ import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
 import {useNavigate} from "react-router-dom";
 
-function Login() {
+function Login({inputTitle}) {
   const navigate = useNavigate();
 
   return (
@@ -35,7 +35,7 @@ function Login() {
           type="submit"
           size="lg"
           onClick={() => {
-            navigate("story");
+            inputTitle[0] !== "" ? navigate("write") : navigate("story");
           }}>
           LogIn
         </Button>

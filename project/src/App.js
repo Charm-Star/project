@@ -12,8 +12,8 @@ import BackMovie from "./backMovie";
 import Write from "./Write";
 
 function App() {
-  let [inputTitle, setInputTitle] = useState();
-  let [inputContent, setInputContent] = useState();
+  let [inputTitle, setInputTitle] = useState([]);
+  let [inputContent, setInputContent] = useState([]);
   let [showLog, setShowLog] = useState(false);
   const navigate = useNavigate();
   let [opaclass, setOpaclass] = useState("");
@@ -27,8 +27,10 @@ function App() {
       setOpaclass("");
     };
   }, []);
+
   return (
     <div>
+      <div className="focus"></div>
       <Navbar
         bg="light"
         variant="light"
@@ -70,7 +72,7 @@ function App() {
             <div>
               <BackMovie></BackMovie>
               {showLog === true ? (
-                <Login></Login>
+                <Login inputTitle={inputTitle}></Login>
               ) : (
                 <div>
                   <div className={"DF " + opaclass}>
@@ -79,6 +81,7 @@ function App() {
                     </p>
                   </div>
                   <Button
+                    className="Btn"
                     variant="warning"
                     size="lg"
                     style={{
@@ -104,7 +107,9 @@ function App() {
           element={
             <Write
               setInputContent={setInputContent}
-              setInputTitle={setInputTitle}></Write>
+              setInputTitle={setInputTitle}
+              inputTitle={inputTitle}
+              inputContent={inputContent}></Write>
           }></Route>
       </Routes>
     </div>

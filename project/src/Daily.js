@@ -1,7 +1,7 @@
 import Card from "react-bootstrap/Card";
 import {useState} from "react";
 // function Daily({inputTitle, inputContent}) {
-function Daily({inputTitle, inputContent}) {
+function Daily({inputTitle, inputContent, titleIndex}) {
   let now = new Date();
   let [featherCnt, setFeatherCnt] = useState(0);
   let year = now.getFullYear();
@@ -30,7 +30,7 @@ function Daily({inputTitle, inputContent}) {
                 fontSize: "20px",
                 fontFamily: "'Jua', sans-serif",
               }}>
-              {inputContent}
+              {inputContent[titleIndex]}
             </Card.Text>
           </Card.Body>
         </Card>
