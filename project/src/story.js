@@ -6,7 +6,7 @@ function Story({inputTitle, inputContent}) {
       <div className="c1image">
         <img className="banner" alt="banner" src="img/sunset.jpg" />
 
-        {/* {inputTitle.map((data, i) => {
+        {inputTitle.map((data, i) => {
           return (
             <Daily
               key={`${i}`}
@@ -14,7 +14,7 @@ function Story({inputTitle, inputContent}) {
               titleIndex={i}
               inputContent={inputContent}></Daily>
           );
-        })} */}
+        })}
       </div>
     </div>
   );
