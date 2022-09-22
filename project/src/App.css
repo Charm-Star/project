@@ -13,13 +13,16 @@
     width: 100%;
     font-size: 230px;
     font-family: 'Pacifico', cursive;
-    color: #f9e725
+    color: #f9e725;
+
 }
 
-.DF:hover {
+
+
+/* .DF:hover {
     -webkit-text-stroke: 3px rgb(220, 38, 38);
     color: transparent
-}
+} */
 
 .loginBox {
     text-align: center;

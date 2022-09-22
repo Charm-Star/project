@@ -45,14 +45,20 @@ function App() {
             className="navBox"
             style={{color: "black", margin: "10px", fontWeight: "550"}}
             onClick={() => {
+              navigate("story");
+            }}>
+            Story
+          </div>
+          <div
+            className="navBox"
+            style={{color: "black", margin: "10px", fontWeight: "550"}}
+            onClick={() => {
               navigate("write");
             }}>
-            {" "}
-            Write{" "}
+            Write
           </div>
           <div style={{color: "black", margin: "10px", fontWeight: "550"}}>
-            {" "}
-            Setting{" "}
+            Setting
           </div>
           <div
             style={{color: "black", margin: "10px", fontWeight: "550"}}
@@ -60,8 +66,7 @@ function App() {
               setShowLog(true);
               navigate("/");
             }}>
-            {" "}
-            Login{" "}
+            Login
           </div>
         </Container>
       </Navbar>

@@ -1,12 +1,25 @@
 import Daily from "./Daily";
 import "./App.css";
 function Story({inputTitle, inputContent}) {
+  const rendering = () => {
+    const result = [];
+    for (let i = inputTitle.length - 1; i >= 0; i--) {
+      result.push(
+        <Daily
+          key={i}
+          inputTitle={inputTitle[i]}
+          titleIndex={i}
+          inputContent={inputContent}></Daily>
+      );
+    }
+    return result;
+  };
   return (
     <div className="container">
       <div className="c1image">
         <img className="banner" alt="banner" src="img/sunset.jpg" />
-
-        {inputTitle.map((data, i) => {
+        <div> {rendering()}</div>
+        {/* {inputTitle.map((data, i) => {
           return (
             <Daily
               key={`${i}`}
@@ -14,7 +27,7 @@ function Story({inputTitle, inputContent}) {
               titleIndex={i}
               inputContent={inputContent}></Daily>
           );
-        })}
+        })} */}
       </div>
     </div>
   );
