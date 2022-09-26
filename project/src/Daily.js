@@ -1,5 +1,6 @@
 import Card from "react-bootstrap/Card";
 import {useState} from "react";
+import {useNavigate} from "react-router-dom";
 // function Daily({inputTitle, inputContent}) {
 function Daily({inputTitle, inputContent, titleIndex}) {
   let now = new Date();
@@ -7,6 +8,7 @@ function Daily({inputTitle, inputContent, titleIndex}) {
   let year = now.getFullYear();
   let month = now.getMonth();
   let date = now.getDate();
+  let navi = useNavigate();
 
   return (
     <div style={{width: "100%", height: "100%", backgroundColor: "lightgrey"}}>
@@ -21,6 +23,13 @@ function Daily({inputTitle, inputContent, titleIndex}) {
               style={{marginTop: "50px", marginLeft: "40px"}}
               className="mb-2 text-muted">
               {`작성일 ${year}.${month + 1}.${date}`}
+              <button
+                className="renameBtn"
+                onClick={() => {
+                  navi("write");
+                }}>
+                수정
+              </button>
             </Card.Subtitle>
             <Card.Text
               style={{

@@ -30,6 +30,7 @@ function Login({inputTitle}) {
             backgroundColor: "rgba(0, 0, 0, 0.4)",
             color: "white",
             border: "1px solid white",
+            display: "inline-block",
           }}
           variant="primary"
           type="submit"
@@ -38,6 +39,21 @@ function Login({inputTitle}) {
             inputTitle[0] !== "" ? navigate("write") : navigate("story");
           }}>
           LogIn
+        </Button>
+        <Button
+          style={{
+            backgroundColor: "rgba(0, 0, 0, 0.4)",
+            color: "white",
+            border: "1px solid white",
+            display: "inline-block",
+          }}
+          variant="primary"
+          type="submit"
+          size="lg"
+          onClick={() => {
+            navigate("join");
+          }}>
+          Join
         </Button>
       </Form>
     </div>

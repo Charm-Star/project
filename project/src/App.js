@@ -10,9 +10,11 @@ import Login from "./Login";
 import Story from "./story";
 import BackMovie from "./backMovie";
 import Write from "./Write";
+import Join from "./Join";
 
 function App() {
   let [inputTitle, setInputTitle] = useState([]);
+  let [nickName, setNickName] = useState("");
   let [inputContent, setInputContent] = useState([]);
   let [showLog, setShowLog] = useState(false);
   const navigate = useNavigate();
@@ -38,9 +40,11 @@ function App() {
           height: "70px",
           borderBottom: "1px solid rgb(210, 210, 210)",
         }}>
-        <Container style={{fontFamily: "'Lobster', cursive"}}>
+        <Container>
           <Navbar.Brand href="/">Daily Feeling</Navbar.Brand>
           <Nav className="me-auto"></Nav>
+          {nickName}
+
           <div
             className="navBox"
             style={{color: "black", margin: "10px", fontWeight: "550"}}
@@ -116,6 +120,9 @@ function App() {
               inputTitle={inputTitle}
               inputContent={inputContent}></Write>
           }></Route>
+        <Route
+          path="/join"
+          element={<Join setNickName={setNickName}></Join>}></Route>
       </Routes>
     </div>
   );
