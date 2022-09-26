@@ -1,5 +1,7 @@
 import Daily from "./Daily";
 import "./App.css";
+import None from "./None";
+
 function Story({inputTitle, inputContent}) {
   const rendering = () => {
     const result = [];
@@ -14,11 +16,13 @@ function Story({inputTitle, inputContent}) {
     }
     return result;
   };
+  console.log(inputContent[0]);
   return (
     <div className="container">
       <div className="c1image">
         <img className="banner" alt="banner" src="img/sunset.jpg" />
-        <div> {rendering()}</div>
+        <div>{inputContent[0] === undefined ? <None></None> : rendering()}</div>
+        {/* <div> {rendering()}</div> */}
         {/* {inputTitle.map((data, i) => {
           return (
             <Daily

@@ -61,12 +61,9 @@ function Write({setInputContent, setInputTitle, inputTitle, inputContent}) {
             let copy = [...inputTitle];
             let tititle = document.getElementsByClassName("diaryTitle");
             copy.push(tititle[0].value);
-            console.log(copy);
             setInputTitle(copy);
             let cocopy = [...inputContent];
             let cocotent = document.getElementsByClassName("textArea");
-            console.log(cocotent[0].value);
-            console.log(cocotent[0].value);
             cocopy.push(cocotent[0].value);
             setInputContent(cocopy);
             navigate("/story");

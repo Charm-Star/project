@@ -41,7 +41,9 @@ function App() {
           borderBottom: "1px solid rgb(210, 210, 210)",
         }}>
         <Container>
-          <Navbar.Brand href="/">Daily Feeling</Navbar.Brand>
+          <Navbar.Brand href="/" style={{fontFamily: '"Pacifico", cursive'}}>
+            Daily Feeling
+          </Navbar.Brand>
           <Nav className="me-auto"></Nav>
           {nickName}
 

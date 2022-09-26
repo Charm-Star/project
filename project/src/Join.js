@@ -251,6 +251,7 @@ function Join({setNickName}) {
             })}
           </Form.Select> */}
         <div>
+          <p>닉네임을 설정해주세요</p>
           <select onChange={handleSelect} value={Selected1}>
             {firName.map((item) => (
               <option value={item} key={item}>
@@ -267,13 +268,14 @@ function Join({setNickName}) {
           </select>
           <hr />
           <p>
-            First: <b>{Selected1}</b> Second: <b>{Selected2}</b>
+            <b>{Selected1}</b>
+            <b>{Selected2}</b>
           </p>
         </div>
         <Button
           onClick={() => {
             setNickName(`${Selected1}${Selected2}`);
-            navi("story");
+            navi("/write");
           }}
           variant="primary"
           type="submit">

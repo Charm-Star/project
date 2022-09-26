@@ -17,7 +17,14 @@
 
 }
 
+footer {
+    text-align: center;
+}
 
+footer img {
+    width: 88.3%;
+    height: 30vh;
+}
 
 /* .DF:hover {
     -webkit-text-stroke: 3px rgb(220, 38, 38);
@@ -101,6 +108,7 @@ textarea {
     border-radius: 15px;
     border: 1px solid black;
     font-size: 15px;
+
 }
 
 .focus {
@@ -136,4 +144,12 @@ textarea {
     border: 1px solid rgba(223, 190, 106, 0);
     color: white;
     background-position: 99% 50%;
+}
+
+.goWrite {
+    width: 20%;
+
+    font-size: 30px;
+    border-radius: 10px;
+    background-color: rgb(202, 199, 199);
 }
