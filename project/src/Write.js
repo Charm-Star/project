@@ -59,12 +59,17 @@ function Write({setInputContent, setInputTitle, inputTitle, inputContent}) {
           }}
           onClick={() => {
             let copy = [...inputTitle];
+
             let tititle = document.getElementsByClassName("diaryTitle");
-            copy.push(tititle[0].value);
+            tititle[0].value === ""
+              ? alert("제목을 입력하시오")
+              : copy.push(tititle[0].value);
             setInputTitle(copy);
             let cocopy = [...inputContent];
             let cocotent = document.getElementsByClassName("textArea");
-            cocopy.push(cocotent[0].value);
+            cocotent[0].value === ""
+              ? alert("내용을 입력하세요")
+              : cocopy.push(cocotent[0].value);
             setInputContent(cocopy);
             navigate("/story");
           }}>
