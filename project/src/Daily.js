@@ -1,6 +1,5 @@
 import Card from "react-bootstrap/Card";
 import {useState} from "react";
-import {useNavigate} from "react-router-dom";
 // function Daily({inputTitle, inputContent}) {
 function Daily({inputTitle, inputContent, titleIndex}) {
   let now = new Date();

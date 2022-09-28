@@ -53,7 +53,7 @@ function App() {
             className="navBox"
             style={{color: "black", margin: "10px", fontWeight: "550"}}
             onClick={() => {
-              navigate("/project/story");
+              navigate("/story");
             }}>
             Story
           </div>
@@ -61,7 +61,7 @@ function App() {
             className="navBox"
             style={{color: "black", margin: "10px", fontWeight: "550"}}
             onClick={() => {
-              navigate("/project/write");
+              navigate("/write");
             }}>
             Write
           </div>
@@ -72,15 +72,15 @@ function App() {
             style={{color: "black", margin: "10px", fontWeight: "550"}}
             onClick={() => {
               setShowLog(true);
-              navigate("/project");
+              navigate("/");
             }}>
             Login
           </div>
         </Container>
       </Navbar>
-      <Routes basename="/project">
+      <Routes>
         <Route
-          path="/project"
+          path="/"
           element={
             <div>
               <BackMovie></BackMovie>
@@ -111,12 +111,12 @@ function App() {
             </div>
           }></Route>
         <Route
-          path="/project/story"
+          path="/story"
           element={
             <Story inputTitle={inputTitle} inputContent={inputContent}></Story>
           }></Route>
         <Route
-          path="/project/write"
+          path="/write"
           element={
             <Write
               setInputContent={setInputContent}
@@ -125,7 +125,7 @@ function App() {
               inputContent={inputContent}></Write>
           }></Route>
         <Route
-          path="/project/join"
+          path="/join"
           element={<Join setNickName={setNickName}></Join>}></Route>
       </Routes>
     </div>
