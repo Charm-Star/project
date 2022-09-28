@@ -20,7 +20,11 @@ function Story({inputTitle, inputContent}) {
   return (
     <div className="container">
       <div className="c1image">
-        <img className="banner" alt="banner" src="img/sunset.jpg" />
+        <img
+          className="banner"
+          alt="banner"
+          src={process.env.PUBLIC_URL + "/img/sunset.jpg"}
+        />
         <div>{inputContent[0] === undefined ? <None></None> : rendering()}</div>
         {/* <div> {rendering()}</div> */}
         {/* {inputTitle.map((data, i) => {

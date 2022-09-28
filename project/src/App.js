@@ -41,7 +41,9 @@ function App() {
           borderBottom: "1px solid rgb(210, 210, 210)",
         }}>
         <Container>
-          <Navbar.Brand href="/" style={{fontFamily: '"Pacifico", cursive'}}>
+          <Navbar.Brand
+            href="/project"
+            style={{fontFamily: '"Pacifico", cursive'}}>
             Daily Feeling
           </Navbar.Brand>
           <Nav className="me-auto"></Nav>
@@ -51,7 +53,7 @@ function App() {
             className="navBox"
             style={{color: "black", margin: "10px", fontWeight: "550"}}
             onClick={() => {
-              navigate("story");
+              navigate("/project/story");
             }}>
             Story
           </div>
@@ -59,7 +61,7 @@ function App() {
             className="navBox"
             style={{color: "black", margin: "10px", fontWeight: "550"}}
             onClick={() => {
-              navigate("write");
+              navigate("/project/write");
             }}>
             Write
           </div>
@@ -70,15 +72,15 @@ function App() {
             style={{color: "black", margin: "10px", fontWeight: "550"}}
             onClick={() => {
               setShowLog(true);
-              navigate("/");
+              navigate("/project");
             }}>
             Login
           </div>
         </Container>
       </Navbar>
-      <Routes>
+      <Routes basename="/project">
         <Route
-          path="/"
+          path="/project"
           element={
             <div>
               <BackMovie></BackMovie>
@@ -109,12 +111,12 @@ function App() {
             </div>
           }></Route>
         <Route
-          path="story"
+          path="/project/story"
           element={
             <Story inputTitle={inputTitle} inputContent={inputContent}></Story>
           }></Route>
         <Route
-          path="write"
+          path="/project/write"
           element={
             <Write
               setInputContent={setInputContent}
@@ -123,7 +125,7 @@ function App() {
               inputContent={inputContent}></Write>
           }></Route>
         <Route
-          path="/join"
+          path="/project/join"
           element={<Join setNickName={setNickName}></Join>}></Route>
       </Routes>
     </div>

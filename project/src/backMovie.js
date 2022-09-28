@@ -1,5 +1,3 @@
-import bgVideo from "./media/back.mp4";
-
 function BackMovie() {
   return (
     <div>
@@ -17,7 +15,10 @@ function BackMovie() {
           transform: "translate(-50%,-50%)",
           zIndex: "-1",
         }}>
-        <source src={bgVideo} type="video/mp4" />
+        <source
+          src={process.env.PUBLIC_URL + "/img/back.mp4"}
+          type="video/mp4"
+        />
       </video>
     </div>
   );
