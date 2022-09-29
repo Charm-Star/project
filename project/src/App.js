@@ -14,6 +14,13 @@ import Join from "./Join";
 
 function App() {
   let [inputTitle, setInputTitle] = useState([]);
+  let [user, setUser] = useState([
+    {
+      id: "master",
+      password: "1234",
+      nickName: "master",
+    },
+  ]);
   let [nickName, setNickName] = useState("");
   let [inputContent, setInputContent] = useState([]);
   let [showLog, setShowLog] = useState(false);
@@ -29,6 +36,8 @@ function App() {
       setOpaclass("");
     };
   }, []);
+  console.log(user);
+  console.log(user.length);
 
   return (
     <div>
@@ -47,7 +56,7 @@ function App() {
             Daily Feeling
           </Navbar.Brand>
           <Nav className="me-auto"></Nav>
-          {nickName}
+          {/* {nickName} */}
 
           <div
             className="navBox"
@@ -85,7 +94,10 @@ function App() {
             <div>
               <BackMovie></BackMovie>
               {showLog === true ? (
-                <Login inputTitle={inputTitle}></Login>
+                <Login
+                  inputTitle={inputTitle}
+                  user={user}
+                  setNickName={setNickName}></Login>
               ) : (
                 <div>
                   <div className={"DF " + opaclass}>
@@ -126,7 +138,7 @@ function App() {
           }></Route>
         <Route
           path="/join"
-          element={<Join setNickName={setNickName}></Join>}></Route>
+          element={<Join setNickName={setNickName} user={user}></Join>}></Route>
       </Routes>
     </div>
   );

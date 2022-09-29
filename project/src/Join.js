@@ -1,10 +1,10 @@
 import "./App.css";
 import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
-import {useState} from "react";
+import {useReducer, useState} from "react";
 import {useNavigate} from "react-router-dom";
 
-function Join({setNickName}) {
+function Join({setNickName, user}) {
   let [firName, setFirName] = useState([
     "가냘픈",
     "가는",
@@ -226,7 +226,11 @@ function Join({setNickName}) {
 
         <Form.Group className="mb-3" controlId="formBasicEmail">
           <Form.Label>Email address</Form.Label>
-          <Form.Control type="email" placeholder="Enter email" />
+          <Form.Control
+            className="newID"
+            type="email"
+            placeholder="Enter email"
+          />
           <Form.Text className="text-muted">
             We'll never share your email with anyone else.
           </Form.Text>
@@ -234,7 +238,11 @@ function Join({setNickName}) {
 
         <Form.Group className="mb-3" controlId="formBasicPassword">
           <Form.Label>Password</Form.Label>
-          <Form.Control type="password" placeholder="Password" />
+          <Form.Control
+            className="newPW"
+            type="password"
+            placeholder="Password"
+          />
         </Form.Group>
         <Form.Group className="mb-3" controlId="formBasicCheckbox"></Form.Group>
         {/* <Form.Select
@@ -274,8 +282,16 @@ function Join({setNickName}) {
         </div>
         <Button
           onClick={() => {
+            let newId = document.getElementsByClassName("newID")[0].value;
+            let newPW = document.getElementsByClassName("newPW")[0].value;
+            let newUser = {
+              id: newId,
+              password: newPW,
+              nickName: `${Selected1}${Selected2}`,
+            };
+            user.push(newUser);
             setNickName(`${Selected1}${Selected2}`);
-            navi("/write");
+            navi("/");
           }}
           variant="primary"
           type="submit">
