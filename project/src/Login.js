@@ -2,7 +2,7 @@ import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
 import {useNavigate} from "react-router-dom";
 
-function Login({user}) {
+function Login({user, setShowNick}) {
   const navigate = useNavigate();
 
   return (
@@ -56,6 +56,7 @@ function Login({user}) {
           checkID(iid, ppw, user).length === 1
             ? navigate("write")
             : alert("로그인 실패");
+          setShowNick(true);
         }}>
         LogIn
       </Button>
@@ -78,31 +79,10 @@ function Login({user}) {
   );
 }
 function checkID(id, pw, user) {
-  // console.log(id);
-  // console.log(pw);
-
-  // for (let i = 0; i <= user.length; i++) {
-  //   if (id === user[i].id && pw === user[i].password) {
-  //     console.log("로그인 성공");
-  //     return true;
-  //   } else {
-  //     alert("로그인 실패");
-  //     return false;
-  //   }
-  // }
-
   let copy = [...user];
   let trueID = copy.filter((data) => {
     return data.id === id && data.password === pw;
   });
-  // console.log(trueID);
   return trueID;
-  // console.log(trueID);
-  // if (trueID !== []) {
-  //   console.log("성공");
-  //   return true;
-  // } else {
-  //   console.log("실패");
-  // }
 }
 export default Login;

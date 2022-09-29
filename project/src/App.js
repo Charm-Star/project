@@ -14,6 +14,7 @@ import Join from "./Join";
 
 function App() {
   let [inputTitle, setInputTitle] = useState([]);
+
   let [user, setUser] = useState([
     {
       id: "master",
@@ -24,6 +25,7 @@ function App() {
   let [nickName, setNickName] = useState("");
   let [inputContent, setInputContent] = useState([]);
   let [showLog, setShowLog] = useState(false);
+  let [showNick, setShowNick] = useState(false);
   const navigate = useNavigate();
   let [opaclass, setOpaclass] = useState("");
   const time = useEffect(() => {
@@ -56,7 +58,7 @@ function App() {
             Daily Feeling
           </Navbar.Brand>
           <Nav className="me-auto"></Nav>
-          {/* {nickName} */}
+          {showNick === false ? null : user[1].nickName}
 
           <div
             className="navBox"
@@ -97,7 +99,8 @@ function App() {
                 <Login
                   inputTitle={inputTitle}
                   user={user}
-                  setNickName={setNickName}></Login>
+                  setNickName={setNickName}
+                  setShowNick={setShowNick}></Login>
               ) : (
                 <div>
                   <div className={"DF " + opaclass}>
